@@ -154,9 +154,24 @@ class Constant extends Chunk {
 class Offset extends Chunk with ArgumentMixin {
   Offset(int length) : super(length);
 
+  String _invert(String input) {
+    var output = '';
+    for (var i = 0; i < input.length; i++) {
+      output += input[i] == '1' ? '0' : '1';
+    }
+    return output;
+  }
+
   @override
   String decompile(String raw) {
-    return '#${binaryToInt(raw)}';
+    var val;
+    if (raw.startsWith('1')) {
+      raw = _invert(raw);
+      val = -(binaryToInt(raw) + 1);
+    } else {
+      val = binaryToInt(raw);
+    }
+    return '#$val';
   }
 }
 
