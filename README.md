@@ -25,5 +25,5 @@ LDR R3, R4, #2
 2. Copy paste the following into your terminal.
 
 ```shell
-cd /tmp && clone https://github.com/JiachenRen/lc3_decompiler.git && cd lc3_decompiler && dart bin/main.dart
+cd /tmp && git clone https://github.com/JiachenRen/lc3_decompiler.git && cd lc3_decompiler && dart bin/main.dart
 ```
