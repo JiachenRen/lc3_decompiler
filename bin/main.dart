@@ -106,12 +106,6 @@ class Instruction {
   }
 }
 
-class FormIdentifier {
-  final int index;
-
-  FormIdentifier(this.index);
-}
-
 abstract class Chunk {
   final int length;
 
